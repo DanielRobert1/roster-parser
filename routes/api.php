@@ -1,7 +1,6 @@
 <?php
 
 use App\Http\Controllers\Api\RosterEvent\RosterEventController;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*

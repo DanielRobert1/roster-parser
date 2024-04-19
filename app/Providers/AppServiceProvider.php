@@ -36,8 +36,10 @@ class AppServiceProvider extends ServiceProvider
 
     private function registerAppConfigs(): void
     {
-        // Set max length for mysql db
-        Schema::defaultStringLength(191);
+        if(!app()->runningUnitTests()){
+            // Set max length for mysql db
+            Schema::defaultStringLength(191);
+        }
 
         // For https scheme if not on local machine
         if(app()->isProduction()){
