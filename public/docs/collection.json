@@ -1,0 +1,104 @@
+{
+    "variable": [
+        {
+            "id": "baseUrl",
+            "key": "baseUrl",
+            "type": "string",
+            "name": "string",
+            "value": "http:\/\/localhost"
+        }
+    ],
+    "info": {
+        "name": "Roster Parser",
+        "_postman_id": "c77f1afe-45ad-4bf9-86da-ee111c62dee3",
+        "description": "",
+        "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
+    },
+    "item": [
+        {
+            "name": "Roster Event Api",
+            "description": "\nThis allows access to manage roster events\n\n\nClass RosterEventController",
+            "item": [
+                {
+                    "name": "Get Roster Events",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/roster",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/roster"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"type\":\"UNK\",\"arrival_location\":\"et\",\"destination_location\":\"labore\",\"metrics\":\"custom\",\"from_date\":\"04\\\/19\\\/2024\",\"to_date\":\"04\\\/19\\\/2024\",\"per_page\":19}"
+                        },
+                        "description": "This allows roster_events to view the paginated data of roster_events",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Upload Roster Events",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/roster\/upload",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/roster\/upload"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"roster\":\"et\"}"
+                        },
+                        "description": "This allows upload of roster to be parsed",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "",
+                            "name": ""
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "auth": {
+        "type": "noauth"
+    }
+}

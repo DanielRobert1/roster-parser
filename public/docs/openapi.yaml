@@ -1,0 +1,110 @@
+openapi: 3.0.3
+info:
+  title: 'Roster Parser'
+  description: ''
+  version: 1.0.0
+servers:
+  -
+    url: 'http://localhost'
+paths:
+  /api/roster:
+    get:
+      summary: 'Get Roster Events'
+      operationId: getRosterEvents
+      description: 'This allows roster_events to view the paginated data of roster_events'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: ''
+      tags:
+        - 'Roster Event Api'
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                type:
+                  type: string
+                  description: ''
+                  example: UNK
+                  enum:
+                    - FLT
+                    - SBY
+                    - 'OFF'
+                    - UNK
+                arrival_location:
+                  type: string
+                  description: ''
+                  example: et
+                destination_location:
+                  type: string
+                  description: ''
+                  example: labore
+                metrics:
+                  type: string
+                  description: ''
+                  example: custom
+                  enum:
+                    - today
+                    - week
+                    - nextWeek
+                    - month
+                    - 30days
+                    - 90days
+                    - year
+                    - allyear
+                    - custom
+                from_date:
+                  type: string
+                  description: 'Must be a valid date in the format <code>m/d/Y</code>.'
+                  example: 04/19/2024
+                to_date:
+                  type: string
+                  description: 'Must be a valid date in the format <code>m/d/Y</code>.'
+                  example: 04/19/2024
+                per_page:
+                  type: integer
+                  description: ''
+                  example: 19
+      security: []
+  /api/roster/upload:
+    post:
+      summary: 'Upload Roster Events'
+      operationId: uploadRosterEvents
+      description: 'This allows upload of roster to be parsed'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: ''
+      tags:
+        - 'Roster Event Api'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                roster:
+                  type: string
+                  description: ''
+                  example: et
+              required:
+                - roster
+      security: []
+tags:
+  -
+    name: 'Roster Event Api'
+    description: "\nThis allows access to manage roster events\n\n\nClass RosterEventController"

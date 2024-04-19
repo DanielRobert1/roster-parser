@@ -1,0 +1,183 @@
+name: 'Roster Event Api'
+description: |-
+
+  This allows access to manage roster events
+
+
+  Class RosterEventController
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/roster
+    metadata:
+      groupName: 'Roster Event Api'
+      groupDescription: |-
+
+        This allows access to manage roster events
+
+
+        Class RosterEventController
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Get Roster Events'
+      description: 'This allows roster_events to view the paginated data of roster_events'
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      type:
+        name: type
+        description: ''
+        required: false
+        example: UNK
+        type: string
+        enumValues:
+          - FLT
+          - SBY
+          - 'OFF'
+          - UNK
+        exampleWasSpecified: false
+        custom: []
+      arrival_location:
+        name: arrival_location
+        description: ''
+        required: false
+        example: et
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      destination_location:
+        name: destination_location
+        description: ''
+        required: false
+        example: labore
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      metrics:
+        name: metrics
+        description: ''
+        required: false
+        example: custom
+        type: string
+        enumValues:
+          - today
+          - week
+          - nextWeek
+          - month
+          - 30days
+          - 90days
+          - year
+          - allyear
+          - custom
+        exampleWasSpecified: false
+        custom: []
+      from_date:
+        name: from_date
+        description: 'Must be a valid date in the format <code>m/d/Y</code>.'
+        required: false
+        example: 04/19/2024
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      to_date:
+        name: to_date
+        description: 'Must be a valid date in the format <code>m/d/Y</code>.'
+        required: false
+        example: 04/19/2024
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      per_page:
+        name: per_page
+        description: ''
+        required: false
+        example: 19
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanBodyParameters:
+      type: UNK
+      arrival_location: et
+      destination_location: labore
+      metrics: custom
+      from_date: 04/19/2024
+      to_date: 04/19/2024
+      per_page: 19
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: ''
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/roster/upload
+    metadata:
+      groupName: 'Roster Event Api'
+      groupDescription: |-
+
+        This allows access to manage roster events
+
+
+        Class RosterEventController
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Upload Roster Events'
+      description: 'This allows upload of roster to be parsed'
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      roster:
+        name: roster
+        description: ''
+        required: true
+        example: et
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanBodyParameters:
+      roster: et
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: ''
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
