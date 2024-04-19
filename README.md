@@ -17,22 +17,28 @@
     cd roster-parser
     ```
 
-3. Install dependencies and start the Laravel Sail containers
+3. Duplicate the `.env.example` file and rename it to `.env`
+    ```
+    cp .env.example .env
+    ```
+4. Install dependencies and start the Laravel Sail containers
     ```
     ./vendor/bin/sail up -d
+    ./vendor/bin/sail composer install
+    ./vendor/bin/sail php artisan key:generate
     ```
 
-4. Create a `database.sqlite` file in the `database` directory
+5. Create a `database.sqlite` file in the `database` directory
     ```
     touch database/database.sqlite
     ```
 
-5. Run migrations to set up the database
+6. Run migrations to set up the database
     ```
     ./vendor/bin/sail artisan migrate
     ```
 
-6. Navigate to `/docs` in your web browser to view the documentation and get started with the application.
+7. Navigate to `/docs` in your web browser to view the documentation and get started with the application.
 
 ### Uploading Roster
 To upload a roster, send a POST request to `/api/roster/upload` with an HTML file in a field called `roster`.
